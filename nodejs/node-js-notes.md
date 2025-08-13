@@ -560,6 +560,77 @@ Yani:
 
 
 
+URL Module 
+-------------------------
+
+ye ek aisa build-in module hai jo url ko pars karane ka kam karata hai 
+ab url kya hota hai 
+
+url 
+-----------
+
+url (Uniform Resource Locator) Ye ek web address hota hai jo kisi resource (jaise ki webpage, image, video, API endpoint) ko Internet par uniquely identify karta hai
+
+URL ek address hota hai jise browser me dal kar kisi website ya web resource tak pahuch sakte hain
+
+example
+----------
+
+https://ashish:1234@example.com:8080/path/to/page?name=ashish&age=25#section1
+
+explain
+---------------
+
+
+  href: 'https://ashish:1234@example.com:8080/path/to/page?name=ashish&age=25#section1',
+  origin: 'https://example.com:8080',
+  protocol: 'https:',
+  username: 'ashish',
+  password: '1234',
+  host: 'example.com:8080',
+  hostname: 'example.com',
+  port: '8080',
+  pathname: '/path/to/page',
+  search: '?name=ashish&age=25',
+  searchParams: URLSearchParams { 'name' => 'ashish', 'age' => '25' },
+  hash: '#section1'
+
+
+new URL()
+--------------
+
+ye ek constructor hai jo user se url mangata hai aur ek object return karata hai url ko pars kar ke 
+
+const { URL } = require('url');
+
+const myURL = new URL('https://ashish:1234@example.com:8080/path/to/page?name=ashish&age=25#section1');
+
+console.log(myURL);
+
+output->
+
+URL {
+  href: 'https://ashish:1234@example.com:8080/path/to/page?name=ashish&age=25#section1',
+  origin: 'https://example.com:8080',
+  protocol: 'https:',
+  username: 'ashish',
+  password: '1234',
+  host: 'example.com:8080',
+  hostname: 'example.com',
+  port: '8080',
+  pathname: '/path/to/page',
+  search: '?name=ashish&age=25',
+  searchParams: URLSearchParams { 'name' => 'ashish', 'age' => '25' },
+  hash: '#section1'
+}
+
+
+
+
+
+
+
+
 
 
 

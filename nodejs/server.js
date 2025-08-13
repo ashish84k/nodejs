@@ -1,6 +1,6 @@
-const Hello = require('./Hello');
-const FileReaderLineByLine = require('./FileReaderLineByLine');
-const path = require('path');
+// const Hello = require('./Hello');
+// const FileReaderLineByLine = require('./FileReaderLineByLine');
+// const path = require('path');
 
 // Hello();
 // process.exit()
@@ -50,16 +50,59 @@ const path = require('path');
 
 
 
+// url module
+
+// const { exec } = require('child_process');
+
+// exec('npm -v', (error, stdout, stderr) => {
+//   if (error) {
+//     console.error(`Error: ${error.message}`);
+//     return;
+//   }
+//   if (stderr) {
+//     console.error(`stderr: ${stderr}`);
+//     return;
+//   }
+//   console.log(`${stdout}`);
+// });
 
 
+// const { URL } = require('url');
+
+// const myURL = new URL('https://ashish:1234@example.com:8080/path/to/page?name=ashish&age=25#section1');
+
+// console.log(myURL);
+
+// const url = require('url');
+
+// const newUrl = new url.domainToASCII('https://ashish:1234@example.com:8080/path/to/page?name=ashish&age=25#section1');
+// console.log(newUrl);
+
+const http = require('http');
+
+const agent = new http.Agent({ keepAlive: true });
+
+http.request('http://localhost:3000', { agent }, res => {
+  console.log('Got response for /');
+});
+
+http.request('http://localhost:3000/amit', { agent }, res => {
+  console.log('Got response for /amit');
+})
+
+const server = http.createServer((req, res) => {
+  console.log(`📥 HTTP request: ${req.method} ${req.url}`);
+  res.end();
+});
+
+server.on('connection', (socket) => {
+  console.log('⚡ New TCP connection');
+  socket.on('close', () => {
+    console.log('❌ TCP connection closed');
+  });
+});
 
 
-
-
-
-
-
-
-
-
-
+server.listen(3000, () => {
+  console.log('🚀 Server is listening on port 3000');
+});
