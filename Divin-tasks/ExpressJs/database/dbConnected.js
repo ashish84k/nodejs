@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const DbConnected = () => {
     try {
-        mongoose.connect("mongodb+srv://ashish84k:HackerLover2@ashish84k.mongodb.net/TodoList?retryWrites=true&w=majority")
+        mongoose.connect("MONGO_URI=mongodb+srv://ashish84k:HackerLover3@ashish84k.yqjnhbz.mongodb.net/TodoList")
         .then(() => {
             console.log("MongoDB connected successfully");
         })
