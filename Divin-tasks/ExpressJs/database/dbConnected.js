@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const DbConnected = () => {
     try {
-        mongoose.connect("mongodb+srv://ashish84k:HackerLover2@cluster0.mongodb.net/TodoList?retryWrites=true&w=majority")
+        mongoose.connect("mongodb+srv://ashish84k:HackerLover2@ashish84k.mongodb.net/TodoList?retryWrites=true&w=majority")
         .then(() => {
             console.log("MongoDB connected successfully");
         })
